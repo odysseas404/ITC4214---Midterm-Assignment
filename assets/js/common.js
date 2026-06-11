@@ -2,9 +2,18 @@ const navbar = `
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
 
-        <a class="navbar-brand" href="index.html">
-            Escapism
-        </a>
+      <a class="navbar-brand d-flex align-items-center"
+   href="index.html">
+
+    <img src="assets/images/logo.png"
+         alt="Escapism logo"
+         width="40"
+         height="40"
+         class="me-2">
+
+    Escapism
+
+</a>
 
         <button class="navbar-toggler"
                 type="button"
