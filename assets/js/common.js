@@ -49,3 +49,17 @@ const navbar = `
 `;
 
 document.querySelector("header").innerHTML = navbar;
+
+const footer = `
+<div class="container text-center p-3">
+
+    <h5>Escapism</h5>
+
+    <p>Email: info@escapism.com</p>
+
+    <p>&copy; 2026 Escapism</p>
+
+</div>
+`;
+
+document.querySelector("footer").innerHTML = footer;
