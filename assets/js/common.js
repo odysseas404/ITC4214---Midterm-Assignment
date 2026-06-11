@@ -34,7 +34,7 @@ const navbar = `
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="tasks.html">Tasks</a>
+                    <a class="nav-link" href="tasks.html">Commissions</a>
                 </li>
 
                 <li class="nav-item">
