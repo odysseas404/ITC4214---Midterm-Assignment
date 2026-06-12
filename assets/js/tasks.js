@@ -136,59 +136,51 @@ function displayCommissions(){
 
         <tr>
 
-            <td>${commission.client}</td>
+    <td>${commission.client}</td>
 
-            <td>${commission.description}</td>
+    <td>${commission.description}</td>
 
-            <td>${commission.dueDate}</td>
+    <td>${commission.dueDate}</td>
 
-            <td class="${priorityClass}">
-                ${commission.priority}
-            </td>
+    <td class="${priorityClass}">
+        ${commission.priority}
+    </td>
 
-            <td>${commission.status}</td>
+    <td>${commission.status}</td>
+
+    <td>
+
+        <div class="d-flex gap-2 justify-content-center">
 
             <button
-class="btn btn-primary btn-sm edit-btn"
-data-index="${index}">
+            class="btn btn-primary btn-sm edit-btn"
+            data-index="${index}">
 
-    Edit
+                Edit
 
-</button>
-            
-            <td>
+            </button>
 
-    <div class="btn-group" role="group">
+            <button
+            class="btn btn-success btn-sm complete-btn"
+            data-index="${index}">
 
-        <button
-        class="btn btn-primary btn-sm edit-btn"
-        data-index="${index}">
+                Complete
 
-            Edit
+            </button>
 
-        </button>
+            <button
+            class="btn btn-danger btn-sm delete-btn"
+            data-index="${index}">
 
-        <button
-        class="btn btn-success btn-sm complete-btn"
-        data-index="${index}">
+                Delete
 
-            Complete
+            </button>
 
-        </button>
+        </div>
 
-        <button
-        class="btn btn-danger btn-sm delete-btn"
-        data-index="${index}">
+    </td>
 
-            Delete
-
-        </button>
-
-    </div>
-
-</td>
-
-        </tr>
+</tr>
 
         `;
 
