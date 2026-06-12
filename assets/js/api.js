@@ -1,4 +1,4 @@
-fetch("https://api.quotable.io/random")
+fetch("https://dummyjson.com/quotes/random")
 
 .then(function(response) {
     return response.json();
@@ -7,6 +7,13 @@ fetch("https://api.quotable.io/random")
 .then(function(data) {
 
     document.querySelector("#quoteText").textContent =
-        data.content;
+        data.quote;
+
+})
+
+.catch(function() {
+
+    document.querySelector("#quoteText").textContent =
+        "Unable to load quote.";
 
 });
