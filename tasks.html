@@ -27,6 +27,8 @@
   <!-- JS -->
   <script src="assets/js/common.js"
           defer></script>
+
+  <script src="assets/js/tasks.js" defer></script>
 </head>
 
 <body>
@@ -39,87 +41,205 @@
 
     <section class="content-box">
 
-        <h1>Client Commissions</h1>
+        <h1 class="text-center mb-4">
+            Client Commissions
+        </h1>
 
         <form id="commissionForm">
 
-    <div class="mb-3">
+            <div class="mb-3">
 
-        <label class="form-label">
-            Client Name
-        </label>
+                <label class="form-label">
+                    Client Name
+                </label>
 
-        <input
-            type="text"
-            class="form-control"
-            id="clientName"
-            required>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="clientName"
+                    required>
 
-    </div>
+            </div>
 
-    <div class="mb-3">
+            <div class="mb-3">
 
-        <label class="form-label">
-            Commission Description
-        </label>
+                <label class="form-label">
+                    Commission Description
+                </label>
 
-        <textarea
-            class="form-control"
-            id="description"
-            required>
-        </textarea>
+                <textarea
+                    class="form-control"
+                    id="description"
+                    rows="3"
+                    required></textarea>
 
-    </div>
+            </div>
 
-    <div class="mb-3">
+            <div class="mb-3">
 
-        <label class="form-label">
-            Delivery Date
-        </label>
+                <label class="form-label">
+                    Delivery Date
+                </label>
 
-        <input
-            type="date"
-            class="form-control"
-            id="dueDate"
-            required>
+                <input
+                    type="date"
+                    class="form-control"
+                    id="dueDate"
+                    required>
 
-    </div>
+            </div>
 
-    <div class="mb-3">
+            <div class="mb-3">
 
-        <label class="form-label">
-            Priority
-        </label>
+                <label class="form-label">
+                    Priority
+                </label>
 
-        <select
-            class="form-select"
-            id="priority">
+                <select
+                    class="form-select"
+                    id="priority">
 
-            <option value="High">High</option>
+                    <option value="High">
+                        High
+                    </option>
 
-            <option value="Medium">Medium</option>
+                    <option value="Medium">
+                        Medium
+                    </option>
 
-            <option value="Low">Low</option>
+                    <option value="Low">
+                        Low
+                    </option>
 
-        </select>
+                </select>
 
-    </div>
+            </div>
 
-    <button
-        type="submit"
-        class="btn btn-dark">
+            <button
+                type="submit"
+                class="btn btn-dark">
 
-        Add Commission
+                Add Commission
 
-    </button>
+            </button>
 
-</form>
+        </form>
+
+        <hr>
+
+        <div class="row text-center">
+
+            <div class="col-md-4">
+
+                <h4>Total</h4>
+
+                <p id="totalCount">0</p>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <h4>Pending</h4>
+
+                <p id="pendingCount">0</p>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <h4>Completed</h4>
+
+                <p id="completedCount">0</p>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="row mb-3">
+
+            <div class="col-md-6">
+
+                <label class="form-label">
+                    Filter Status
+                </label>
+
+                <select
+                    id="statusFilter"
+                    class="form-select">
+
+                    <option value="All">
+                        All
+                    </option>
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="Completed">
+                        Completed
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <label class="form-label">
+                    Sort By
+                </label>
+
+                <select
+                    id="sortOption"
+                    class="form-select">
+
+                    <option value="date">
+                        Delivery Date
+                    </option>
+
+                    <option value="name">
+                        Client Name
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <table class="table table-bordered">
+
+            <thead>
+
+                <tr>
+
+                    <th>Client</th>
+
+                    <th>Description</th>
+
+                    <th>Date</th>
+
+                    <th>Priority</th>
+
+                    <th>Status</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="commissionTableBody">
+
+            </tbody>
+
+        </table>
 
     </section>
 
 </main>
-
-    </main>
 
     <footer></footer>
 

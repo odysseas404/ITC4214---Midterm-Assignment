@@ -34,15 +34,15 @@ const navbar = `
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link" href="tasks.html">Commissions</a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="portfolio.html">Portfolio</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
                 </li>
 
                 <li class="nav-item">
@@ -67,13 +67,17 @@ const navbar = `
 document.querySelector("header").innerHTML = navbar;
 
 const footer = `
-<div class="container text-center p-3">
+<div class="site-footer">
 
-    <h5>Escapism</h5>
+    <div class="container text-center p-3">
 
-    <p>Email: info@escapism.com</p>
+        <h5>Escapism</h5>
 
-    <p>&copy; 2026 Escapism</p>
+        <p>Email: info@escapism.com</p>
+
+        <p>&copy; 2026 Escapism</p>
+
+    </div>
 
 </div>
 `;
@@ -87,4 +91,15 @@ darkButton.addEventListener("click", function() {
 
     document.body.classList.toggle("dark-mode");
 
+    localStorage.setItem(
+        "darkMode",
+        document.body.classList.contains("dark-mode")
+    );
+
 });
+
+if(localStorage.getItem("darkMode") === "true") {
+
+    document.body.classList.add("dark-mode");
+
+}
