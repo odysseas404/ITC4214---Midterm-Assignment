@@ -247,3 +247,15 @@ body {
     width: 220px;
 
 }
+
+.social-icon {
+
+    border: none !important;
+
+    outline: none !important;
+
+    box-shadow: none !important;
+
+    text-decoration: none !important;
+
+}
