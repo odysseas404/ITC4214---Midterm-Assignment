@@ -53,6 +53,13 @@ const navbar = `
 
         </div>
 
+        <button class="btn btn-outline-light"
+        id="darkModeButton">
+
+    Dark Mode
+
+</button>
+
     </div>
 </nav>
 `;
@@ -72,3 +79,12 @@ const footer = `
 `;
 
 document.querySelector("footer").innerHTML = footer;
+
+const darkButton =
+document.querySelector("#darkModeButton");
+
+darkButton.addEventListener("click", function() {
+
+    document.body.classList.toggle("dark-mode");
+
+});
