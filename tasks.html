@@ -35,6 +35,90 @@
 
     <main>
 
+      <main class="container py-5">
+
+    <section class="content-box">
+
+        <h1>Client Commissions</h1>
+
+        <form id="commissionForm">
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Client Name
+        </label>
+
+        <input
+            type="text"
+            class="form-control"
+            id="clientName"
+            required>
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Commission Description
+        </label>
+
+        <textarea
+            class="form-control"
+            id="description"
+            required>
+        </textarea>
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Delivery Date
+        </label>
+
+        <input
+            type="date"
+            class="form-control"
+            id="dueDate"
+            required>
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Priority
+        </label>
+
+        <select
+            class="form-select"
+            id="priority">
+
+            <option value="High">High</option>
+
+            <option value="Medium">Medium</option>
+
+            <option value="Low">Low</option>
+
+        </select>
+
+    </div>
+
+    <button
+        type="submit"
+        class="btn btn-dark">
+
+        Add Commission
+
+    </button>
+
+</form>
+
+    </section>
+
+</main>
+
     </main>
 
     <footer></footer>

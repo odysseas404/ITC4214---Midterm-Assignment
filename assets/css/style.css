@@ -73,3 +73,45 @@ body {
     background-color: rgba(0, 0, 0, 0.9) !important;
 
 }
+
+.dark-mode .content-box {
+
+    background-color: rgba(0, 0, 0, 0.85);
+
+    color: white;
+
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode p,
+.dark-mode li {
+
+    color: white;
+
+}
+
+.dark-mode .card {
+
+    background-color: #222;
+
+    color: white;
+
+}
+
+.dark-mode table {
+
+    color: white;
+
+}
+
+.dark-mode th,
+.dark-mode td {
+
+    background-color: #222;
+
+}
+
