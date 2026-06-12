@@ -1,5 +1,7 @@
 let commissions = [];
 
+let editIndex = -1;
+
 const form =
 document.querySelector("#commissionForm");
 
@@ -21,19 +23,36 @@ form.addEventListener("submit", function(event){
 
     const commission = {
 
-        client: client,
+    client: client,
 
-        description: description,
+    description: description,
 
-        dueDate: dueDate,
+    dueDate: dueDate,
 
-        priority: priority,
+    priority: priority,
 
-        status: "Pending"
+    status:
+    editIndex === -1
+    ? "Pending"
+    : commissions[editIndex].status
 
-    };
+};
+
+    if(editIndex === -1){
 
     commissions.push(commission);
+
+}
+else{
+
+    commissions[editIndex] = commission;
+
+    editIndex = -1;
+
+    document.querySelector("button[type='submit']")
+    .textContent = "Add Commission";
+
+}
 
     displayCommissions();
 
@@ -129,25 +148,45 @@ function displayCommissions(){
 
             <td>${commission.status}</td>
 
+            <button
+class="btn btn-primary btn-sm edit-btn"
+data-index="${index}">
+
+    Edit
+
+</button>
+            
             <td>
 
-                <button
-                class="btn btn-success btn-sm complete-btn"
-                data-index="${index}">
+    <div class="btn-group" role="group">
 
-                    Complete
+        <button
+        class="btn btn-primary btn-sm edit-btn"
+        data-index="${index}">
 
-                </button>
+            Edit
 
-                <button
-                class="btn btn-danger btn-sm delete-btn"
-                data-index="${index}">
+        </button>
 
-                    Delete
+        <button
+        class="btn btn-success btn-sm complete-btn"
+        data-index="${index}">
 
-                </button>
+            Complete
 
-            </td>
+        </button>
+
+        <button
+        class="btn btn-danger btn-sm delete-btn"
+        data-index="${index}">
+
+            Delete
+
+        </button>
+
+    </div>
+
+</td>
 
         </tr>
 
@@ -160,6 +199,37 @@ function displayCommissions(){
 }
 
 function addButtonEvents(){
+
+    const editButtons =
+document.querySelectorAll(".edit-btn");
+
+editButtons.forEach(function(button){
+
+    button.addEventListener("click", function(){
+
+        const index =
+        this.dataset.index;
+
+        document.querySelector("#clientName").value =
+        commissions[index].client;
+
+        document.querySelector("#description").value =
+        commissions[index].description;
+
+        document.querySelector("#dueDate").value =
+        commissions[index].dueDate;
+
+        document.querySelector("#priority").value =
+        commissions[index].priority;
+
+        editIndex = index;
+
+        document.querySelector("button[type='submit']")
+        .textContent = "Update Commission";
+
+    });
+
+});
 
     const completeButtons =
     document.querySelectorAll(".complete-btn");
