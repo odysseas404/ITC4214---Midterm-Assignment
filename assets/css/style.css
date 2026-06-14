@@ -259,3 +259,21 @@ body {
     text-decoration: none !important;
 
 }
+
+.high-priority {
+
+    background-color: #ffb3b3;
+
+}
+
+.medium-priority {
+
+    background-color: #ffe5b3;
+
+}
+
+.low-priority {
+
+    background-color: #c9f7c9;
+
+}
