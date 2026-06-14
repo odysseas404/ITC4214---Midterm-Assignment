@@ -8,6 +8,16 @@ contactForm.addEventListener("submit", function(event){
     const name =
     document.querySelector("#name").value;
 
+    if(!/^[A-Za-z\s'-]+$/.test(name)){
+
+    alert(
+        "Name can only contain letters."
+    );
+
+    return;
+
+    }
+
     const email =
     document.querySelector("#email").value;
 
@@ -15,7 +25,17 @@ contactForm.addEventListener("submit", function(event){
     document.querySelector("#subject").value;
 
     const message =
-    document.querySelector("#message").value;
+    document.querySelector("#message").value.trim();
+
+    if(message.trim().length < 10){
+
+    alert(
+        "Message must contain at least 10 characters."
+    );
+
+    return;
+
+    }
 
     document.querySelector("#confirmationText")
     .innerHTML = `
