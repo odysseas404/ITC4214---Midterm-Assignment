@@ -51,6 +51,7 @@
                     type="text"
                     id="clientName"
                     class="form-control"
+                    aria-label="Client Name"
                     required
                     maxlength="50"
                     pattern="[A-Za-z ]+">
@@ -68,6 +69,7 @@
                 <textarea
                 id="description"
                 class="form-control"
+                aria-label="Commission Description"
                 required
                 maxlength="300">
                 </textarea>
@@ -82,6 +84,7 @@
                     type="date"
                     class="form-control"
                     id="dueDate"
+                    aria-label="Due Date"
                     required>
 
             </div>
@@ -94,7 +97,8 @@
 
                 <select
                     class="form-select"
-                    id="priority">
+                    id="priority"
+                    aria-label="Priority">
 
                     <option value="High">
                         High
@@ -174,7 +178,8 @@
 
         <select
             id="statusFilter"
-            class="form-select">
+            class="form-select"
+            aria-label="Filter Status">
 
             <option value="All">All</option>
 
@@ -196,7 +201,8 @@
 
         <select
             id="priorityFilter"
-            class="form-select">
+            class="form-select"
+            aria-label="Filter Priority">
 
             <option value="All">All Priorities</option>
 
@@ -220,7 +226,8 @@
 
         <select
             id="sortOption"
-            class="form-select">
+            class="form-select"
+            aria-label="Sort By">
 
             <option value="date">
                 Delivery Date
