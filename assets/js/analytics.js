@@ -39,17 +39,42 @@ new Chart(chartCanvas, {
 
         datasets: [{
 
-            label:
-            "Number of Commissions",
-
             data: [
 
                 completed,
                 pending
 
+            ],
+
+            backgroundColor: [
+
+                "#198754",
+                "#dc3545"
+
             ]
 
         }]
+
+    },
+
+    options: {
+
+        plugins: {
+
+            legend: {
+
+                labels: {
+
+                    color:
+                    document.body.classList.contains("dark-mode")
+                    ? "white"
+                    : "black"
+
+                }
+
+            }
+
+        }
 
     }
 
