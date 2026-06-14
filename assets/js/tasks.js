@@ -1,7 +1,11 @@
+// Select the commissions from local storage or initialize an empty array if not found.
+
 let commissions =
 JSON.parse(
     localStorage.getItem("commissions")
 ) || [];
+
+// Initialize counters for completed and pending commissions.
 
 let editIndex = -1;
 function saveCommissions(){
@@ -13,11 +17,15 @@ function saveCommissions(){
 
 }
 
+// Select the commission form element and add a submit event listener to handle form submissions.
+
 let activities =
 JSON.parse(localStorage.getItem("activities")) || [];
 
 const form =
 document.querySelector("#commissionForm");
+
+// Add a submit event listener to the commission form to validate inputs, create or update commissions, and update the display and summary.
 
 form.addEventListener("submit", function(event){
 
@@ -47,6 +55,8 @@ form.addEventListener("submit", function(event){
     .toISOString()
     .split("T")[0];
 
+// Set the minimum date for the due date input to today's date to prevent selecting past dates.
+
 document.querySelector("#dueDate")
 .min = today;
 
@@ -69,6 +79,7 @@ document.querySelector("#dueDate")
     : commissions[editIndex].status
 
 };
+    // If editIndex is -1, it means a new commission is being added, so push the new commission to the commissions array and save it to local storage. Otherwise, update the existing commission at editIndex.
 
     if(editIndex === -1){
 
@@ -80,6 +91,8 @@ document.querySelector("#dueDate")
     `${client} submitted a new commission`
 );
 
+// Save the updated activities array to local storage.
+
 localStorage.setItem(
     "activities",
     JSON.stringify(activities)
@@ -87,6 +100,7 @@ localStorage.setItem(
 
 }
 else{
+    // If editIndex is not -1, it means an existing commission is being edited, so update the commission at editIndex with the new data and save it to local storage.
 
     commissions[editIndex] = commission;
     
@@ -99,6 +113,8 @@ else{
 
 }
 
+// After adding or updating a commission, display the updated commissions, update the summary, and reset the form.
+
     displayCommissions();
 
     updateSummary();
@@ -106,6 +122,8 @@ else{
     form.reset();
 
 });
+
+// Function to display the commissions in the table based on the selected filters and sorting options.
 
 function displayCommissions(){
 
@@ -134,6 +152,8 @@ function displayCommissions(){
 
     }
 
+    // If the selected priority filter is not "All", filter the commissions based on the selected priority.
+
     if(priorityValue !== "All"){
 
     filteredCommissions =
@@ -144,9 +164,13 @@ function displayCommissions(){
     });
 
     }
+    
+    // Get the selected sorting option and sort the filtered commissions accordingly.
 
     const sortValue =
     document.querySelector("#sortOption").value;
+
+    // If the selected sorting option is "name", sort the filtered commissions alphabetically by client name.
 
     if(sortValue === "name"){
 
@@ -157,6 +181,8 @@ function displayCommissions(){
         });
 
     }
+
+    // If the selected sorting option is "date", sort the filtered commissions by due date in ascending order.
 
     if(sortValue === "date"){
 
@@ -169,6 +195,8 @@ function displayCommissions(){
 
     }
 
+    // If the selected sorting option is "priority", sort the filtered commissions by priority in the order of High, Medium, and Low.
+    
     filteredCommissions.forEach(function(commission,index){
 
         let priorityClass = "";
@@ -249,12 +277,16 @@ function displayCommissions(){
 
 }
 
+// Function to add event listeners to the edit, complete, and delete buttons for each commission in the table.
+
 function addButtonEvents(){
 
     const editButtons =
 document.querySelectorAll(".edit-btn");
 
 editButtons.forEach(function(button){
+
+    // Add a click event listener to each edit button to populate the form with the commission data for editing.
 
     button.addEventListener("click", function(){
 
@@ -282,6 +314,8 @@ editButtons.forEach(function(button){
 
 });
 
+    // Add click event listeners to the complete buttons to mark commissions as completed and update the display and summary.
+
     const completeButtons =
     document.querySelectorAll(".complete-btn");
 
@@ -301,6 +335,8 @@ editButtons.forEach(function(button){
     `${commissions[index].client}'s commission was completed`
 );
 
+// Save the updated activities array to local storage.
+
 localStorage.setItem(
     "activities",
     JSON.stringify(activities)
@@ -313,6 +349,8 @@ localStorage.setItem(
         });
 
     });
+
+    // Add click event listeners to the delete buttons to remove commissions from the array and update the display and summary.
 
     const deleteButtons =
     document.querySelectorAll(".delete-btn");
@@ -345,6 +383,8 @@ localStorage.setItem(
 
 }
 
+// Function to update the summary counts for total, pending, and completed commissions.
+
 function updateSummary(){
 
     document.querySelector("#totalCount")
@@ -375,6 +415,8 @@ function updateSummary(){
 
 }
 
+// Add event listeners to the filter and sort select elements to update the displayed commissions when the user changes the selected options.
+
 document
 .querySelector("#statusFilter")
 .addEventListener("change", displayCommissions);
@@ -387,6 +429,10 @@ document
 .querySelector("#priorityFilter")
 .addEventListener("change", displayCommissions);
 
+// Call the displayCommissions and updateSummary functions to initialize the display and summary counts when the page loads.
+
 displayCommissions();
+
+// Call the updateSummary function to initialize the summary counts when the page loads.
 
 updateSummary();

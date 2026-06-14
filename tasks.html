@@ -166,108 +166,112 @@
                         Filter Status
                     </label>
 
-                    <div class="row mb-3">
+            <!-- Dropdown select for filtering commissions by status, with Bootstrap's form-select class for styling and an ID for JavaScript targeting. -->
+        
+            <div class="row mb-3">
 
-    <div class="col-md-4">
+                <div class="col-md-4">
 
-        <label class="form-label">
+                    <label class="form-label">
 
-            Filter Status
+                    Filter Status
 
-        </label>
+                    </label>
 
-        <select
-            id="statusFilter"
-            class="form-select"
-            aria-label="Filter Status">
+                    <select
+                        id="statusFilter"
+                        class="form-select"
+                        aria-label="Filter Status">
 
-            <option value="All">All</option>
+                        <option value="All">All</option>
 
-            <option value="Pending">Pending</option>
+                        <option value="Pending">Pending</option>
 
-            <option value="Completed">Completed</option>
+                        <option value="Completed">Completed</option>
 
-        </select>
+                    </select>
 
-    </div>
+                </div>
 
-    <div class="col-md-4">
+                <div class="col-md-4">
 
-        <label class="form-label">
+                    <label class="form-label">
 
-            Filter Priority
+                        Filter Priority
 
-        </label>
+                    </label>
 
-        <select
-            id="priorityFilter"
-            class="form-select"
-            aria-label="Filter Priority">
+                    <select
+                        id="priorityFilter"
+                        class="form-select"
+                        aria-label="Filter Priority">
 
-            <option value="All">All Priorities</option>
+                        <option value="All">All Priorities</option>
 
-            <option value="High">High</option>
+                        <option value="High">High</option>
 
-            <option value="Medium">Medium</option>
+                        <option value="Medium">Medium</option>
 
-            <option value="Low">Low</option>
+                        <option value="Low">Low</option>
 
-        </select>
+                    </select>
 
-    </div>
+                </div>
 
-    <div class="col-md-4">
+                <!-- Dropdown select for sorting commissions, with Bootstrap's form-select class for styling and an ID for JavaScript targeting. -->
 
-        <label class="form-label">
+                <div class="col-md-4">
 
-            Sort By
+                    <label class="form-label">
 
-        </label>
+                        Sort By
 
-        <select
-            id="sortOption"
-            class="form-select"
-            aria-label="Sort By">
+                    </label>
 
-            <option value="date">
-                Delivery Date
-            </option>
+                    <select
+                        id="sortOption"
+                        class="form-select"
+                        aria-label="Sort By">
 
-            <option value="name">
-                Client Name
-            </option>
+                        <option value="date">
+                            Delivery Date
+                        </option>
 
-        </select>
+                        <option value="name">
+                            Client Name
+                        </option>
 
-    </div>
+                    </select>
 
-</div>
+                </div>
 
-            <table class="table table-bordered"> <!-- Table for displaying client commissions, with Bootstrap's table and table-bordered classes for styling. -->
+            </div>
 
-                <thead>
+        <table class="table table-bordered"> <!-- Table for displaying client commissions, with Bootstrap's table and table-bordered classes for styling. -->
 
-                    <tr>
+            <thead>
 
-                        <th> Client </th>
+                <tr>
 
-                        <th> Description </th>
+                    <th> Client </th>
 
-                        <th> Due Date </th>
+                    <th> Description </th>
 
-                        <th> Priority </th>
+                    <th> Due Date </th>
 
-                        <th> Status </th>
+                    <th> Priority </th>
 
-                        <th class="actions-column"> Actions </th>
+                    <th> Status </th>
 
-                    </tr>
+                    <th class="actions-column"> Actions </th>
 
-                </thead>
+                </tr>
 
-                <tbody id="commissionTableBody"> <!-- Table body where commission rows will be dynamically inserted by JavaScript. -->
+            </thead>
 
-                </tbody>
+            <tbody id="commissionTableBody"> <!-- Table body where commission rows will be dynamically inserted by JavaScript. -->
+
+            </tbody>
 
             </table>
 

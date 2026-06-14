@@ -20,10 +20,6 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-          defer></script>
-
   <!-- JS -->
   <script src="assets/js/common.js"
           defer></script>
@@ -62,13 +58,17 @@
 
         <div class="mb-3">
 
+          <!-- Label for the name input field, with Bootstrap's form-label class for styling. -->
+
           <label for="name" class="form-label">
 
             Name
 
           </label>
 
-            <input
+          <!-- Text input for the user's name, with Bootstrap's form-control class for styling and an ID for JavaScript targeting. -->
+
+          <input
             type="text"
             id="name"
             class="form-control"
@@ -145,12 +145,14 @@
 
     </section>
 
-    <div
-    class="modal fade"
-    id="confirmationModal"
-    tabindex="-1">
+    <!-- Confirmation Modal for displaying a message after form submission, using Bootstrap's modal component. -->
 
-    <div class="modal-dialog">
+    <div
+      class="modal fade"
+      id="confirmationModal"
+      tabindex="-1">
+
+      <div class="modal-dialog">
 
         <div class="modal-content">
 
@@ -185,31 +187,35 @@
 
         </div>
 
+      </div>
+
     </div>
 
-</div>
+    <section class="content-box mb-5">
 
-<section class="content-box mb-5">
+      <h2>Location</h2>
 
-    <h2>Location</h2>
+      <!-- Embedded Google Map showing the location of Escapism, with a title for accessibility and lazy loading for performance. -->
 
-    <iframe
-        title="Google Maps Location of Escapism"
-        src="https://www.google.com/maps?q=Athens,Greece&output=embed"
-        width="100%"
-        height="450"
-        style="border:0;"
-        loading="lazy">
+      <iframe
+          title="Google Maps Location of Escapism"
+          src="https://www.google.com/maps?q=Athens,Greece&output=embed"
+          width="100%"
+          height="450"
+          style="border:0;"
+          loading="lazy">
 
-    </iframe>
+      </iframe>
 
-</section>
+    </section>
 
-<section class="content-box text-center">
+    <!-- Social Media Section with links to Instagram, Facebook, and X (formerly Twitter), using Bootstrap Icons for visual representation. -->
 
-    <h2>Follow Escapism</h2>
+    <section class="content-box text-center">
 
-    <div class="mt-4">
+      <h2>Follow Escapism</h2>
+
+      <div class="mt-4">
 
         <a
             href="https://instagram.com"
@@ -241,13 +247,15 @@
 
         </a>
 
-    </div>
+      </div>
 
-</section>
+    </section>
 
   </main>
 
   <footer></footer>
+
+<!-- Bootstrap JS Bundle for interactive components like modals, with Popper.js included. -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

@@ -1,3 +1,5 @@
+//Constant variable to select the commissions from local storage
+
 const commissions =
 JSON.parse(
     localStorage.getItem("commissions")
@@ -5,6 +7,8 @@ JSON.parse(
 
 let completed = 0;
 let pending = 0;
+
+//Loop through the commissions and count the completed and pending commissions
 
 commissions.forEach(function(commission){
 
@@ -20,6 +24,8 @@ commissions.forEach(function(commission){
     }
 
 });
+
+//Select the canvas element for the chart and create a new Chart instance.
 
 const chartCanvas =
 document.querySelector("#commissionChart");

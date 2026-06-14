@@ -1,5 +1,9 @@
+// Select the contact form element and add a submit event listener to validate the form inputs and display a confirmation modal.
+
 const contactForm =
 document.querySelector("#contactForm");
+
+// Validate the form inputs and display a confirmation modal when the form is submitted.
 
 contactForm.addEventListener("submit", function(event){
 

@@ -1,3 +1,5 @@
+// Select the header and footer elements and insert the navbar and footer HTML into them.
+
 const navbar = `
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
@@ -68,6 +70,8 @@ const navbar = `
 </nav>
 `;
 
+// Insert the navbar HTML into the header element and the footer HTML into the footer element.
+
 document.querySelector("header").innerHTML = navbar;
 
 const footer = `
@@ -88,6 +92,8 @@ const footer = `
 
 document.querySelector("footer").innerHTML = footer;
 
+// Select the dark mode button and add a click event listener to toggle dark mode and save the preference in local storage.
+
 const darkButton =
 document.querySelector("#darkModeButton");
 
@@ -101,6 +107,8 @@ darkButton.addEventListener("click", function() {
     );
 
 });
+
+// Check if dark mode is enabled in local storage and apply the dark mode class to the body element if it is.
 
 if(localStorage.getItem("darkMode") === "true") {
 

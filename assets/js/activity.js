@@ -1,5 +1,9 @@
+//Constant variable to select the activity list element from the DOM
+
 const activityList =
 document.querySelector("#activityList");
+
+//Check if the activity list element exists in the DOM
 
 if(activityList){
 
@@ -7,6 +11,8 @@ if(activityList){
     JSON.parse(
         localStorage.getItem("activities")
     ) || [];
+
+    //Clear the current content of the activity list before populating it with new activities
 
     activityList.innerHTML = "";
 
@@ -16,6 +22,8 @@ if(activityList){
         "<li>No activity available yet.</li>";
 
     }
+
+    //Iterate over the activities in reverse order to display the most recent activities first
 
     activities
     .slice()
