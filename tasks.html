@@ -49,9 +49,11 @@
 
                 <input
                     type="text"
-                    class="form-control"
                     id="clientName"
-                    required>
+                    class="form-control"
+                    required
+                    maxlength="50"
+                    pattern="[A-Za-z ]+">
 
                 <!-- Text input for the client's name, with Bootstrap's form-control class for styling -->
 
@@ -64,10 +66,11 @@
                 <!-- Textarea for the commission description, with Bootstrap's form-control class for styling and an ID for JavaScript targeting. -->
 
                 <textarea
-                    class="form-control"
-                    id="description"
-                    rows="3"
-                    required></textarea>
+                id="description"
+                class="form-control"
+                required
+                maxlength="300">
+                </textarea>
 
             </div>
 
@@ -159,39 +162,79 @@
                         Filter Status
                     </label>
 
-                    <select
-                        id="statusFilter"
-                        class="form-select">
+                    <div class="row mb-3">
 
-                        <option value="All"> All </option>
+    <div class="col-md-4">
 
-                    <option value="Pending"> Pending </option>
+        <label class="form-label">
 
-                    <option value="Completed"> Completed </option>
+            Filter Status
 
-                    </select>
+        </label>
 
-                </div>
+        <select
+            id="statusFilter"
+            class="form-select">
 
-                <div class="col-md-6"> <!-- Column for sorting options, with Bootstrap's grid system for layout. -->
+            <option value="All">All</option>
 
-                    <label class="form-label"> <!-- Label for the sorting dropdown, with Bootstrap's form-label class. -->
-                        Sort By
-                    </label>
+            <option value="Pending">Pending</option>
 
-                    <select
-                        id="sortOption"
-                        class="form-select">
+            <option value="Completed">Completed</option>
 
-                        <option value="date"> Delivery Date </option>
+        </select>
 
-                        <option value="name"> Client Name </option>
-                    
-                    </select>
+    </div>
 
-                </div>
+    <div class="col-md-4">
 
-            </div>
+        <label class="form-label">
+
+            Filter Priority
+
+        </label>
+
+        <select
+            id="priorityFilter"
+            class="form-select">
+
+            <option value="All">All Priorities</option>
+
+            <option value="High">High</option>
+
+            <option value="Medium">Medium</option>
+
+            <option value="Low">Low</option>
+
+        </select>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <label class="form-label">
+
+            Sort By
+
+        </label>
+
+        <select
+            id="sortOption"
+            class="form-select">
+
+            <option value="date">
+                Delivery Date
+            </option>
+
+            <option value="name">
+                Client Name
+            </option>
+
+        </select>
+
+    </div>
+
+</div>
 
             <table class="table table-bordered"> <!-- Table for displaying client commissions, with Bootstrap's table and table-bordered classes for styling. -->
 

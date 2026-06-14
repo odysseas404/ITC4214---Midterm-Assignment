@@ -1,6 +1,20 @@
-let commissions = [];
+let commissions =
+JSON.parse(
+    localStorage.getItem("commissions")
+) || [];
 
 let editIndex = -1;
+function saveCommissions(){
+
+    localStorage.setItem(
+        "commissions",
+        JSON.stringify(commissions)
+    );
+
+}
+
+let activities =
+JSON.parse(localStorage.getItem("activities")) || [];
 
 const form =
 document.querySelector("#commissionForm");
@@ -12,11 +26,29 @@ form.addEventListener("submit", function(event){
     const client =
     document.querySelector("#clientName").value;
 
+    if(!/^[A-Za-z ]+$/.test(client)){
+
+    alert(
+        "Client name can only contain letters."
+    );
+
+    return;
+
+    }
+
     const description =
     document.querySelector("#description").value;
 
     const dueDate =
     document.querySelector("#dueDate").value;
+
+    const today =
+    new Date()
+    .toISOString()
+    .split("T")[0];
+
+document.querySelector("#dueDate")
+.min = today;
 
     const priority =
     document.querySelector("#priority").value;
@@ -42,10 +74,23 @@ form.addEventListener("submit", function(event){
 
     commissions.push(commission);
 
+    saveCommissions();
+
+    activities.push(
+    `${client} submitted a new commission`
+);
+
+localStorage.setItem(
+    "activities",
+    JSON.stringify(activities)
+);
+
 }
 else{
 
     commissions[editIndex] = commission;
+    
+    saveCommissions();
 
     editIndex = -1;
 
@@ -74,6 +119,9 @@ function displayCommissions(){
 
     const filterValue =
     document.querySelector("#statusFilter").value;
+    
+    const priorityValue =
+    document.querySelector("#priorityFilter").value;
 
     if(filterValue !== "All"){
 
@@ -83,6 +131,17 @@ function displayCommissions(){
             return item.status === filterValue;
 
         });
+
+    }
+
+    if(priorityValue !== "All"){
+
+    filteredCommissions =
+    filteredCommissions.filter(function(item){
+
+        return item.priority === priorityValue;
+
+    });
 
     }
 
@@ -116,19 +175,19 @@ function displayCommissions(){
 
         if(commission.priority === "High"){
 
-            priorityClass = "text-danger";
+            priorityClass = "high-priority";
 
         }
 
         if(commission.priority === "Medium"){
 
-            priorityClass = "text-warning";
+            priorityClass = "medium-priority";
 
         }
 
         if(commission.priority === "Low"){
 
-            priorityClass = "text-success";
+            priorityClass = "low-priority";
 
         }
 
@@ -236,6 +295,17 @@ editButtons.forEach(function(button){
             commissions[index].status =
             "Completed";
 
+            saveCommissions();
+
+            activities.push(
+    `${commissions[index].client}'s commission was completed`
+);
+
+localStorage.setItem(
+    "activities",
+    JSON.stringify(activities)
+);
+
             displayCommissions();
 
             updateSummary();
@@ -249,20 +319,29 @@ editButtons.forEach(function(button){
 
     deleteButtons.forEach(function(button){
 
-        button.addEventListener("click", function(){
+    button.addEventListener("click", function(){
 
-            const index =
-            this.dataset.index;
+        const index =
+        this.dataset.index;
 
-            commissions.splice(index,1);
+        activities.push(
+            `${commissions[index].client}'s commission was deleted`
+        );
 
-            displayCommissions();
+        localStorage.setItem(
+            "activities",
+            JSON.stringify(activities)
+        );
 
-            updateSummary();
+        commissions.splice(index, 1);
 
-        });
+        saveCommissions();
+
+        displayCommissions();
 
     });
+
+});
 
 }
 
@@ -303,3 +382,11 @@ document
 document
 .querySelector("#sortOption")
 .addEventListener("change", displayCommissions);
+
+document
+.querySelector("#priorityFilter")
+.addEventListener("change", displayCommissions);
+
+displayCommissions();
+
+updateSummary();
