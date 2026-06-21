@@ -7,7 +7,7 @@ const navbar = `
       <a class="navbar-brand d-flex align-items-center"
    href="index.html">
 
-    <img src="assets/images/logo.png"
+    <img src="assets/images/logo - new.webp"
          alt="Escapism logo"
          width="40"
          height="40"
