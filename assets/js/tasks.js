@@ -200,7 +200,10 @@ function displayCommissions(){
 
     // If the selected sorting option is "priority", sort the filtered commissions by priority in the order of High, Medium, and Low.
     
-    filteredCommissions.forEach(function(commission,index){
+    filteredCommissions.forEach(function(commission){
+
+    const index =
+    commissions.indexOf(commission);
 
         let priorityClass = "";
 
