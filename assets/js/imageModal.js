@@ -15,8 +15,10 @@ images.forEach(function(image){
     
     image.addEventListener("click", function(){
 
+        //.this retrieves the file path of the selected image.
         modalImage.src = this.src;
 
+        //new: creates a new object - turning ordinary HTML into a working Bootstrap popup.
         const modal =
         new bootstrap.Modal(
             document.querySelector("#imageModal")

@@ -3,7 +3,7 @@
 const commissions =
 JSON.parse(
     localStorage.getItem("commissions")
-) || [];
+) || []; //or - if nothing is stored, use an empty array instead.
 
 let completed = 0;
 let pending = 0;
@@ -73,8 +73,8 @@ new Chart(chartCanvas, {
 
                     color:
                     document.body.classList.contains("dark-mode")
-                    ? "white"
-                    : "black"
+                    ? "white" //ternary operator if
+                    : "black" //ternary operator else
 
                 }
 

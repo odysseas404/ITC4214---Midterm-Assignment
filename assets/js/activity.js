@@ -7,10 +7,11 @@ document.querySelector("#activityList");
 
 if(activityList){
 
+    //The saved activities are converted back into a JS array using JSON.parse()
     const activities =
     JSON.parse(
         localStorage.getItem("activities")
-    ) || [];
+    ) || []; //or statement - if activities don't exist, use an empty array.
 
     //Clear the current content of the activity list before populating it with new activities
 
@@ -26,7 +27,7 @@ if(activityList){
     //Iterate over the activities in reverse order to display the most recent activities first
 
     activities
-    .slice()
+    .slice() //copies the activities array and then reverses the copy. 
     .reverse()
     .forEach(function(activity){
 

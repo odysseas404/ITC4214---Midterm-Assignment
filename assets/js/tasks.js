@@ -50,6 +50,7 @@ form.addEventListener("submit", function(event){
     const dueDate =
     document.querySelector("#dueDate").value;
 
+    //today's date.
     const today =
     new Date()
     .toISOString()
@@ -63,6 +64,7 @@ document.querySelector("#dueDate")
     const priority =
     document.querySelector("#priority").value;
 
+    //creating a commission object for a complete commission.
     const commission = {
 
     client: client,
@@ -73,6 +75,7 @@ document.querySelector("#dueDate")
 
     priority: priority,
 
+    //if adding a new commission -> pending / else -> keep the commission's existing status.
     status:
     editIndex === -1
     ? "Pending"

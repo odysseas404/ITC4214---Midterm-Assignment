@@ -7,6 +7,7 @@ document.querySelector("#contactForm");
 
 contactForm.addEventListener("submit", function(event){
 
+    //Prevents default submission in order to firstly confirm the form.
     event.preventDefault();
 
     const name =
@@ -54,6 +55,7 @@ contactForm.addEventListener("submit", function(event){
 
     `;
 
+    //creates a modal that turns id=confirmationModal into a popup window.
     const modal =
     new bootstrap.Modal(
         document.querySelector("#confirmationModal")

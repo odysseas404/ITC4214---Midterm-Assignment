@@ -71,8 +71,7 @@
                 class="form-control"
                 aria-label="Commission Description"
                 required
-                maxlength="300">
-                </textarea>
+                maxlength="300"></textarea>
 
             </div>
 
@@ -82,7 +81,7 @@
 
                 <input
                     type="date"
-                    id="deliveryDate"
+                    id="dueDate"
                     class="form-control"
                     min="2026-07-01"
                     max="2030-12-31"
@@ -159,14 +158,6 @@
 
             <hr>
 
-            <div class="row mb-3">
-
-                <div class="col-md-6">
-
-                    <label class="form-label"> <!-- Label for the status filter dropdown, with Bootstrap's form-label class. -->
-                        Filter Status
-                    </label>
-
             <!-- Dropdown select for filtering commissions by status, with Bootstrap's form-select class for styling and an ID for JavaScript targeting. -->
         
             <div class="row mb-3">
@@ -235,7 +226,7 @@
                         aria-label="Sort By">
 
                         <option value="date">
-                            Delivery Date
+                            Due Date
                         </option>
 
                         <option value="name">

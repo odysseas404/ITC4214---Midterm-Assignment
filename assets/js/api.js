@@ -2,7 +2,9 @@
 
 fetch("https://dummyjson.com/quotes/random")
 
+//then -> when the data is ready, run this function.
 .then(function(response) {
+    //converts the response into a JS object.
     return response.json();
 })
 
